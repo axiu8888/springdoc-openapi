@@ -1,0 +1,13 @@
+
+plugins {
+    id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+    testImplementation 'org.apache.groovy:groovy:4.0.15'
+    testImplementation project(':springdoc-openapi-starter-webmvc-api')
+    testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    testImplementation 'org.springframework.data:spring-data-commons:3.2.0'
+}
+
+description = 'springdoc-openapi-groovy-tests'

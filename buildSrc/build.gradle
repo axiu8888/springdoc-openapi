@@ -1,0 +1,23 @@
+
+
+plugins {
+  // Support convention plugins written in Groovy. Convention plugins are build scripts in 'src/main' that automatically become available as plugins in the main build.
+  id 'groovy-gradle-plugin'
+  id "org.jetbrains.kotlin.jvm" version "1.9.20"
+}
+
+repositories {
+  mavenLocal()
+  maven { url("https://maven.aliyun.com/repository/google") }
+  maven { url("https://maven.aliyun.com/repository/central") }
+  maven { url("https://maven.aliyun.com/repository/gradle-plugin") }
+  maven { url("https://maven.aliyun.com/repository/public") }
+  maven { url("https://maven.aliyun.com/repository/jcenter") }
+  maven { url 'https://repo.spring.io/milestone' }
+  maven { url 'https://repo.spring.io/release' }
+  maven { url 'https://repo.spring.io/snapshot' }
+  maven { url 'https://repo.maven.apache.org/maven2/' }
+  maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+  // Use the plugin portal to apply community plugins in convention plugins.
+  gradlePluginPortal()
+}

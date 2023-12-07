@@ -1,0 +1,29 @@
+
+plugins {
+  id "java"
+  id "java-library"
+  id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+  [
+      'org.springframework.boot:spring-boot-autoconfigure:3.2.0',
+      'org.springframework.boot:spring-boot-configuration-processor:3.2.0',
+      'io.swagger.core.v3:swagger-core-jakarta:2.2.19',
+      'org.springframework.boot:spring-boot-starter-actuator:3.2.0',
+      'org.springframework.cloud:spring-cloud-function-web:4.0.0',
+      'org.apache.groovy:groovy:4.0.15',
+      'com.github.therapi:therapi-runtime-javadoc:0.15.0',
+      'org.springframework.security:spring-security-oauth2-authorization-server:1.0.1',
+      'com.fasterxml.jackson.module:jackson-module-kotlin:2.15.3',
+      'org.springframework.boot:spring-boot-starter-data-rest:3.2.0',
+      'com.querydsl:querydsl-core:5.0.0',
+  ].forEach {
+    api(it)
+    implementation(it)
+  }
+  compileOnly 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20'
+  compileOnly 'org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.3'
+}
+
+description = 'springdoc-openapi-starter-common'

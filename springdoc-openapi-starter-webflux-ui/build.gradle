@@ -1,0 +1,14 @@
+
+plugins {
+  id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+  api project(':springdoc-openapi-starter-webflux-api')
+  api 'org.webjars:swagger-ui:5.10.3'
+  api 'org.springframework.boot:spring-boot-starter-actuator:3.2.0'
+
+  testImplementation 'io.projectreactor.netty:reactor-netty-http:1.1.13'
+}
+
+description = 'springdoc-openapi-starter-webflux-ui'

@@ -1,0 +1,11 @@
+
+plugins {
+    id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+    testImplementation 'org.springframework.cloud:spring-cloud-starter-function-web:4.0.0'
+    testImplementation project(':springdoc-openapi-starter-webmvc-api')
+}
+
+description = 'springdoc-openapi-function-webmvc-tests'

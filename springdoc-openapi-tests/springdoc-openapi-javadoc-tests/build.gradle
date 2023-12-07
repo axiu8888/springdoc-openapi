@@ -1,0 +1,14 @@
+
+plugins {
+    id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+    testImplementation 'com.github.therapi:therapi-runtime-javadoc-scribe:0.15.0'
+    testImplementation project(':springdoc-openapi-starter-webmvc-api')
+    testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    testImplementation 'javax.money:money-api:1.1'
+    testImplementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+}
+
+description = 'springdoc-openapi-javadoc-tests'

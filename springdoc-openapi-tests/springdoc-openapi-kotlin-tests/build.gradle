@@ -1,0 +1,15 @@
+
+plugins {
+    id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+    testImplementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.15.3'
+    testImplementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.7.3'
+    testImplementation project(':springdoc-openapi-starter-webflux-api')
+    testImplementation 'org.springframework.boot:spring-boot-starter-reactor-netty:3.2.0'
+    testImplementation 'io.netty:netty-resolver-dns-native-macos:4.1.101.Final'
+}
+
+description = 'springdoc-openapi-kotlin-tests'

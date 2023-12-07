@@ -1,0 +1,12 @@
+
+plugins {
+    id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+    testImplementation project(':springdoc-openapi-starter-webflux-api')
+    testImplementation 'org.springframework.cloud:spring-cloud-starter-function-webflux:4.0.0'
+    testImplementation 'io.netty:netty-resolver-dns-native-macos:4.1.101.Final'
+}
+
+description = 'springdoc-openapi-function-webflux-tests'

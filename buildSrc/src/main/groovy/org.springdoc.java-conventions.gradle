@@ -1,0 +1,73 @@
+
+
+plugins {
+  id 'java'
+  id 'java-library'
+  id 'maven-publish'
+}
+
+repositories {
+  mavenLocal()
+  maven { url("https://maven.aliyun.com/repository/google") }
+  maven { url("https://maven.aliyun.com/repository/central") }
+  maven { url("https://maven.aliyun.com/repository/gradle-plugin") }
+  maven { url("https://maven.aliyun.com/repository/public") }
+  maven { url("https://maven.aliyun.com/repository/jcenter") }
+  maven { url 'https://repo.spring.io/milestone' }
+  maven { url 'https://repo.spring.io/release' }
+  maven { url 'https://repo.spring.io/snapshot' }
+  maven { url 'https://repo.maven.apache.org/maven2/' }
+  maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+
+  maven {
+    url = "http://192.168.1.200:9001/repository/maven-public/"
+    allowInsecureProtocol = true
+    credentials {
+      username "admin"
+      password "admin123"
+    }
+  }
+}
+
+dependencies {
+  compileOnly 'org.springframework.boot:spring-boot-starter-web:3.2.0'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.0'
+}
+
+group = 'org.springdoc'
+version = '2.3.1-SNAPSHOT'
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
+
+if (!project.name.endsWith("-tests")) {
+  publishing {
+    publications {
+      maven(MavenPublication) {
+        from(components.java)
+      }
+    }
+    repositories {
+      maven {
+        def isSnapshots = "${version}".toUpperCase().endsWith('-SNAPSHOT')
+        url = "http://192.168.1.200:9001/repository/maven-${isSnapshots ? "snapshots" : "releases"}"
+        //url = "file://D:/home/Repository/${isSnapshots ? "snapshots" : "releases"}"
+        if (!url.toString().startsWith('file:/')) {
+          allowInsecureProtocol = true
+          credentials {
+            username "admin"
+            password "admin123"
+          }
+        }
+      }
+    }
+  }
+}
+
+tasks.withType(JavaCompile) {
+  options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+  options.encoding = 'UTF-8'
+}

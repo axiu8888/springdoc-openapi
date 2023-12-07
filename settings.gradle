@@ -1,0 +1,42 @@
+pluginManagement {
+  repositories {
+    mavenLocal()
+    maven { url("https://maven.aliyun.com/repository/google") }
+    maven { url("https://maven.aliyun.com/repository/central") }
+    maven { url("https://maven.aliyun.com/repository/gradle-plugin") }
+    maven { url("https://maven.aliyun.com/repository/public") }
+    maven { url("https://maven.aliyun.com/repository/jcenter") }
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/release' }
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'https://repo.maven.apache.org/maven2/' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    mavenCentral()
+    gradlePluginPortal()
+  }
+}
+
+rootProject.name = 'springdoc-openapi'
+
+include(
+    ':springdoc-openapi-starter-common',
+    ':springdoc-openapi-starter-webmvc-ui',
+    ':springdoc-openapi-starter-webmvc-api',
+    ':springdoc-openapi-starter-webflux-ui',
+    ':springdoc-openapi-starter-webflux-api',
+)
+
+[
+    ':springdoc-openapi-javadoc-tests',
+    ':springdoc-openapi-data-rest-tests',
+    ':springdoc-openapi-security-tests',
+    ':springdoc-openapi-groovy-tests',
+    ':springdoc-openapi-kotlin-tests',
+    ':springdoc-openapi-hateoas-tests',
+    ':springdoc-openapi-actuator-webmvc-tests',
+    ':springdoc-openapi-actuator-webflux-tests',
+    ':springdoc-openapi-function-webmvc-tests',
+    ':springdoc-openapi-function-webflux-tests',
+].forEach {
+  include(':springdoc-openapi-tests' + it)
+}

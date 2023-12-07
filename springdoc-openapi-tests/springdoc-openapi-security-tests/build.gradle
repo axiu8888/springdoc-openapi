@@ -1,0 +1,17 @@
+
+plugins {
+    id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+    testImplementation 'org.springframework.security:spring-security-web:6.2.0'
+    testImplementation 'org.springframework.security:spring-security-config:6.2.0'
+    testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    testImplementation project(':springdoc-openapi-starter-webmvc-api')
+    testImplementation 'javax.xml:jaxb-impl:2.1'
+    testImplementation 'javax.jws:javax.jws-api:1.1'
+    testImplementation 'io.jsonwebtoken:jjwt:0.9.1'
+    testImplementation 'org.springframework.security:spring-security-oauth2-authorization-server:1.0.1'
+}
+
+description = 'springdoc-openapi-security-tests'

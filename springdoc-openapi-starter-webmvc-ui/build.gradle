@@ -1,0 +1,15 @@
+
+plugins {
+  id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+  api project(':springdoc-openapi-starter-webmvc-api')
+  api 'org.webjars:swagger-ui:5.10.3'
+  api 'org.springframework.boot:spring-boot-starter-actuator:3.2.0'
+  compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+  testImplementation 'org.springframework.boot:spring-boot-starter-security:3.2.0'
+  testImplementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.16'
+}
+
+description = 'springdoc-openapi-starter-webmvc-ui'

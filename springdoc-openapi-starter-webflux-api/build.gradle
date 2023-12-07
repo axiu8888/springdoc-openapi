@@ -1,0 +1,15 @@
+
+plugins {
+  id 'org.springdoc.java-conventions'
+}
+
+dependencies {
+  api project(':springdoc-openapi-starter-common')
+  api 'org.springframework:spring-webflux:6.1.1'
+  api 'org.springframework.boot:spring-boot-starter-actuator:3.2.0'
+
+  testImplementation 'org.springframework.boot:spring-boot-starter-reactor-netty:3.2.0'
+  testImplementation 'io.netty:netty-resolver-dns-native-macos:4.1.101.Final'
+}
+
+description = 'springdoc-openapi-starter-webflux-api'
